@@ -25,16 +25,13 @@ public class ArrayLC989 {
 
     public List<Integer> addToArrayForm(int[] A, int K) {
         List<Integer> result = new ArrayList<>();
-        for (int i = A.length - 1; i >= 0; --i) {
-            int sum = A[i] + K % 10;
+        for (int i = A.length - 1; i >= 0; i--) {
+            K += A[i];
+            result.add(K % 10);
             K /= 10;
-            if (sum >= 10) {
-                K++;
-                sum -= 10;
-            }
-            result.add(sum);
         }
-        // 数组加完了看K加完了没有
+
+        // 把K剩下的部分搞进去
         while (K > 0) {
             result.add(K % 10);
             K /= 10;
@@ -45,15 +42,11 @@ public class ArrayLC989 {
 
     public List<Integer> addToArrayForm2(int[] A, int K) {
         List<Integer> result = new ArrayList<>();
-
         for (int i = A.length - 1; i >= 0 || K > 0; i--, K /= 10) {
-            if (i >= 0) {
-                // 如果数组对应的位上有值，就加到K上
-                K += A[i];
-            }
+            // 如果数组对应的位上有值，就加到K上
+            K += i >= 0 ? A[i] : 0;
             result.add(K % 10);
         }
-
         Collections.reverse(result);
         return result;
     }

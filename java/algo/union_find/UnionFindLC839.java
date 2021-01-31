@@ -12,7 +12,8 @@ public class UnionFindLC839 {
     public static void main(String[] args) {
         UnionFindLC839 instance = new UnionFindLC839();
 
-        int result = instance.numSimilarGroups(new String[]{"tars", "rats", "arts", "star"});
+//        int result = instance.numSimilarGroups(new String[]{"tars", "rats", "arts", "star"});
+        int result = instance.numSimilarGroups(new String[]{"blw","bwl","wlb"});
 
         System.out.println(result);
     }
@@ -25,12 +26,14 @@ public class UnionFindLC839 {
         }
 
         int result = n;
-        for (int i = 1; i < n; i++) {
-            // 先把所有的字符串遍历一下，相似的就连上
-            if (check(strs[i], strs[i - 1])) {
-                // 第一次连通的，连通性减一
-                if (union(parent, i, i - 1)) {
-                    result--;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                // 所有的字符串两两比较，相似的就连上
+                if (check(strs[i], strs[j])) {
+                    // 第一次连通的，连通性减一
+                    if (union(parent, i, j)) {
+                        result--;
+                    }
                 }
             }
         }

@@ -20,7 +20,7 @@ public class SlidingWindowLC1423 {
         int length = cardPoints.length;
 
         int initSum = 0;
-        // 从-k到0开始滑
+        // 从[-k,0) ===> [length-k,length-1]开始滑
         for (int i = length - 1; i > length - k - 1; i--) {
             initSum += cardPoints[i];
         }

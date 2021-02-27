@@ -1,4 +1,4 @@
-package algo.array;
+package algo.dfs;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,10 +11,10 @@ import java.util.Map;
  * 2021-02-26 每日一题
  * 其实我一开始想到bitmap来着，后面就直接想着暴力解了，不过bitmap在匹配的时候也不好理解，躲的过初一躲不过十五
  */
-public class ArrayLC1178 {
+public class DfsLC1178 {
 
     public static void main(String[] args) {
-        ArrayLC1178 instance = new ArrayLC1178();
+        DfsLC1178 instance = new DfsLC1178();
 
         List<Integer> result = instance.findNumOfValidWords(
                 new String[]{"aaaa", "asas", "able", "ability", "actt", "actor", "access"},

@@ -1,4 +1,4 @@
-package algo.array;
+package algo.dp;
 
 /**
  * https://leetcode-cn.com/problems/range-sum-query-immutable/
@@ -6,7 +6,7 @@ package algo.array;
  * 2021-03-01 每日一题
  * 简单的不像easy，看了题解才发现是我太天真，前缀和是dp的开始。因为一次含参构造多次计算，所以把前缀和都存起来方便后续检索
  */
-public class ArrayLC303 {
+public class DpLC303 {
 
     public static void main(String[] args) {
         NumArray numArray = new NumArray(new int[]{-2, 0, 3, -5, 2, -1});

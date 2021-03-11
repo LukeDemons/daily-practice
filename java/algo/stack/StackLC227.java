@@ -14,37 +14,39 @@ public class StackLC227 {
     public static void main(String[] args) {
         StackLC227 instance = new StackLC227();
 
-        int result = instance.calculate(" 3+5 / 2 ");
+        int result = instance.calculate("3+2*2");
 
         System.out.println(result);
     }
 
-    //FIXME 还没ac
     public int calculate(String s) {
-        s = s.replace(" ", "");
         char[] charArr = s.toCharArray();
         int num = 0;
+        char op = '+';
         Deque<Integer> stack = new ArrayDeque<>();
         for (int i = 0; i < charArr.length; i++) {
             if (Character.isDigit(charArr[i])) {
                 num = num * 10 + charArr[i] - '0';
-            } else if (i == s.length() - 1) {
-                if (charArr[i] == '+') {
-                    stack.addLast(charArr[i] - '0');
-                } else if (charArr[i] == '-') {
-                    stack.addLast(-(charArr[i] - '0'));
-                } else if (charArr[i] == '*') {
+            }
+            // 符号 or 最后一位，都要进入计算
+            if (!Character.isDigit(charArr[i]) && charArr[i] != ' ' || i == s.length() - 1) {
+                if (op == '+') {
+                    stack.addLast(num);
+                } else if (op == '-') {
+                    stack.addLast(-num);
+                } else if (op == '*') {
                     stack.addLast(stack.removeLast() * num);
-                } else if (charArr[i] == '/') {
+                } else if (op == '/') {
                     stack.addLast(stack.removeLast() / num);
                 }
                 num = 0;
+                op = charArr[i];
             }
         }
 
-        int result = 0, size = stack.size();
-        for (int i = 0; i < size; i++) {
-            result += stack.removeLast();
+        int result = 0;
+        while (!stack.isEmpty()) {
+            result += stack.pollLast();
         }
         return result;
     }

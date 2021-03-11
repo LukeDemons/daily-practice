@@ -7,7 +7,7 @@ import java.util.Deque;
  * https://leetcode-cn.com/problems/basic-calculator/
  * <p>
  * 2021-03-10 每日一题
- * 用栈来实现，思路比较清晰，但还是细节满满
+ * 用栈来实现，思路比较清晰，但还是细节满满，不愧为hard
  */
 public class StackLC224 {
 
@@ -25,9 +25,11 @@ public class StackLC224 {
         Deque<Integer> stack = new ArrayDeque<>();
         for (char c : s.toCharArray()) {
             if (Character.isDigit(c)) {
+                // 如果当前字符是一个数字，则用num进行记录，但当前有可能是一个>9的数字，所以需要num = num * 10 + c - '0'
                 num = 10 * num + c - '0';
             } else if (c == '+' || c == '-') {
                 res += sign * num;
+                // 将num置为0，用来存放当前符号(+/-)之后的数字
                 num = 0;
                 if (c == '+') {
                     sign = 1;

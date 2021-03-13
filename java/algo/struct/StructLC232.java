@@ -1,4 +1,4 @@
-package algo.stack;
+package algo.struct;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -9,7 +9,7 @@ import java.util.Deque;
  * 2021-03-05 每日一题
  * 经典题目，两个队列模拟一个栈，两个栈模拟一个队列，看似简单细节不少，今天写法偷懒了
  */
-public class StackLC232 {
+public class StructLC232 {
 
     public static void main(String[] args) {
         MyQueue obj = new MyQueue();

@@ -29,6 +29,7 @@ public class ListLC92 {
         }
         ListNode cur = pre.next;
         while (count < right) {
+            // 调整顺序的是cur的下一个节点，所以循环到right-1
             ListNode removed = cur.next;
             cur.next = cur.next.next;
 

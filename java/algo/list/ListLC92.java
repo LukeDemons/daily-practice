@@ -23,12 +23,11 @@ public class ListLC92 {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode pre = dummy;
-        ListNode cur = dummy.next;
         while (count < left) {
             pre = pre.next;
-            cur = cur.next;
             count++;
         }
+        ListNode cur = pre.next;
         while (count < right) {
             ListNode removed = cur.next;
             cur.next = cur.next.next;

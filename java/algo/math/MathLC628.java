@@ -1,14 +1,14 @@
-package algo.array;
+package algo.math;
 
 import java.util.Arrays;
 
 /**
  * https://leetcode-cn.com/problems/maximum-product-of-three-numbers/
  */
-public class ArrayLC628 {
+public class MathLC628 {
 
     public static void main(String[] args) {
-        ArrayLC628 instance = new ArrayLC628();
+        MathLC628 instance = new MathLC628();
 
         int result = instance.maximumProduct(new int[]{-1, -9, 2, 3});
 

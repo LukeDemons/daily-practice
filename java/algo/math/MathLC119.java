@@ -1,4 +1,4 @@
-package algo.array;
+package algo.math;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,10 +10,10 @@ import java.util.List;
  * 2021-02-12 每日一题
  * 感觉简单但也要调试好多遍才行。熟悉一点之后就好理解了，i代表层数（第i层刚好i+1个数儿），j代表每层的下标，下标为i的刚好是最后一个值
  */
-public class ArrayLC119 {
+public class MathLC119 {
 
     public static void main(String[] args) {
-        ArrayLC119 instance = new ArrayLC119();
+        MathLC119 instance = new MathLC119();
 
 //        List<Integer> result = instance.getRow(4);
 //        List<Integer> result = instance.getRow1(4);

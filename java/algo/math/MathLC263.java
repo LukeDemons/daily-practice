@@ -11,7 +11,7 @@ public class MathLC263 {
     public static void main(String[] args) {
         MathLC263 instance = new MathLC263();
 
-        boolean result = instance.isUgly(0);
+        boolean result = instance.isUgly(14);
 
         System.out.println(result);
     }
@@ -29,6 +29,6 @@ public class MathLC263 {
         while (n % 5 == 0) {
             n /= 5;
         }
-        return Math.abs(n) == 1;
+        return n == 1;
     }
 }

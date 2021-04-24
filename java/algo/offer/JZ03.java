@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/
+ * <p>
  * 2021-04-23 每日一题太难了，动归整不明白，剑指来凑数
  */
 public class JZ03 {

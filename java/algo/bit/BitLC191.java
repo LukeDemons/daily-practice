@@ -1,4 +1,4 @@
-package algo.array;
+package algo.bit;
 
 /**
  * https://leetcode-cn.com/problems/number-of-1-bits/
@@ -6,10 +6,10 @@ package algo.array;
  * 2021-03-22 每日一题
  * 这题是338题的前置条件，核心是了解，n&n-1 =》可以去掉n的最后一个1
  */
-public class ArrayLC191 {
+public class BitLC191 {
 
     public static void main(String[] args) {
-        ArrayLC191 instance = new ArrayLC191();
+        BitLC191 instance = new BitLC191();
 
 //        String str = "11111111111111111111111111111001";
         String str = "00000000000000000000000000001011";

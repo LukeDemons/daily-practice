@@ -6,6 +6,7 @@ import algo.ListNode;
  * https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/
  * <p>
  * 2021-05-16 再来个easy
+ * 6.4 猿辅导一面碰到了原题
  */
 public class JZ25 {
 
@@ -13,7 +14,7 @@ public class JZ25 {
         JZ25 instance = new JZ25();
 
 //        ListNode result = instance.mergeTwoLists(ListNode.init(1, 2, 4), ListNode.init(1, 3, 4));
-        ListNode result = instance.mergeTwoLists(ListNode.init(-9,3), ListNode.init(5,7));
+        ListNode result = instance.mergeTwoLists(ListNode.init(-9, 3), ListNode.init(5, 7));
 
         ListNode.print(result);
     }
@@ -26,15 +27,11 @@ public class JZ25 {
                 head.next = l2;
                 l2 = l2.next;
                 head = head.next;
-                continue;
             } else if (l2 == null) {
                 head.next = l1;
                 l1 = l1.next;
                 head = head.next;
-                continue;
-            }
-
-            if (l1.val < l2.val) {
+            } else if (l1.val < l2.val) {
                 head.next = l1;
                 l1 = l1.next;
             } else {

@@ -1,7 +1,7 @@
 package algo.main;
 
 /**
- * https://leetcode.cn/problems/find-the-highest-altitude/description/
+ * https://leetcode.cn/problems/find-the-highest-altitude/
  * <p>
  * 2022-11-19 每日一题
  * 非常简单

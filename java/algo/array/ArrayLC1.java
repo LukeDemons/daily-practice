@@ -1,6 +1,7 @@
 package algo.array;
 
 /**
+ * 2023-07-01 每日一题
  * https://leetcode-cn.com/problems/two-sum/
  */
 public class ArrayLC1 {

@@ -3,8 +3,9 @@ package algo.list;
 import algo.ListNode;
 
 /**
+ * 2023-07-02 每日一题
  * https://leetcode-cn.com/problems/add-two-numbers/
- *
+ * <p>
  * 6.10 猿辅导二面原题
  */
 public class ListLC2 {
@@ -51,6 +52,39 @@ public class ListLC2 {
             addOne = sum / 10;
         }
 
+        return dummy.next;
+    }
+
+    /**
+     * dummy很重要，后面的链表如何连接也很重要，head=dummy，给next设置值，既有了val，next也不会null
+     */
+    public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode head = dummy;
+        boolean flag = false;
+        while (l1 != null || l2 != null || flag) {
+            int curVal = 0;
+            if (l1 != null) {
+                curVal += l1.val;
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                curVal += l2.val;
+                l2 = l2.next;
+            }
+            if (flag) {
+                curVal++;
+            }
+            if (curVal > 9) {
+                flag = true;
+                curVal -= 10;
+            } else {
+                flag = false;
+            }
+            // 这里是关键，记得把next的值设置好，既有了val，next也不会null
+            head.next = new ListNode(curVal);
+            head = head.next;
+        }
         return dummy.next;
     }
 }
